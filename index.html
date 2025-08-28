@@ -2,83 +2,100 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Git y GitHub</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Git y GitHub</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<script src="script.js"></script>
-
 <body>
-    
-    <!-- Menú lateral -->
-    <div class="sidebar">
-        <div class="sidebar-header text-center py-3">
-            <div class="logo-git-container">
-                <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Logo Git"
-                    class="logo-git">
-            </div>
-            <h5 class="text-light mt-2">📌 Comandos Git</h5>
-        </div>
+  <!-- Botón hamburguesa para móviles -->
+  <div class="menu-toggle d-lg-none">
+    <i class="bi bi-list"></i>
+  </div>
 
-        
-        <!-- Inicio -->
-        <a href="index.html"><i class="bi bi-house-door"></i> Inicio</a>
-
-        <!-- Básico -->
-        <h6 class="text-light px-3 mt-3">Básico</h6>
-        <a href="#" data-page="pages/git-init.html"><i class="bi bi-rocket"></i> git init</a>
-        <a href="#" data-page="pages/git-clone.html"><i class="bi bi-cloud-download"></i> git clone</a>
-        <a href="#" data-page="pages/git-add.html"><i class="bi bi-plus-circle"></i> git add</a>
-        <a href="#" data-page="pages/git-commit.html"><i class="bi bi-check2-square"></i> git commit</a>
-        <a href="#" data-page="pages/git-status.html"><i class="bi bi-info-circle"></i> git status</a>
-
-        <!-- Medio -->
-        <h6 class="text-light px-3 mt-3">Medio</h6>
-        <a href="#" data-page="pages/git-branch.html"><i class="bi bi-diagram-3"></i> git branch</a>
-        <a href="#" data-page="pages/git-checkout.html"><i class="bi bi-arrow-left-right"></i> git checkout</a>
-        <a href="#" data-page="pages/git-merge.html"><i class="bi bi-arrow-repeat"></i> git merge</a>
-        <a href="#" data-page="pages/git-log.html"><i class="bi bi-journal-text"></i> git log</a>
-
-        <!-- Avanzado -->
-        <h6 class="text-light px-3 mt-3">Avanzado</h6>
-        <a href="#" data-page="pages/git-rebase.html"><i class="bi bi-arrow-bar-up"></i> git rebase</a>
-        <a href="#" data-page="pages/git-stash.html"><i class="bi bi-archive"></i> git stash</a>
-        <a href="#" data-page="pages/git-cherry-pick.html"><i class="bi bi-hand-index"></i> git cherry-pick</a>
-        <a href="#" data-page="pages/git-reset.html"><i class="bi bi-x-circle"></i> git reset</a>
+  <!-- Menú lateral -->
+  <div class="sidebar">
+    <div class="sidebar-header text-center py-3">
+      <div class="logo-git-container">
+        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Logo Git" class="logo-git">
+      </div>
+      <h5 class="text-light mt-2">📌 Comandos de Git</h5>
     </div>
 
-    <!-- Contenido principal -->
-    <div class="content text-center">
-        
-        <div id="contenido" class="mt-4">
-            <div class="header">
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo"
-                    class="logo">
-                <h1 class="fw-bold display-4">Guía de Git y GitHub</h1>
-                <p class="text-muted fs-5">
-                    Aprende los comandos más importantes de Git con ejemplos prácticos y tutoriales.
-                </p>
-            </div>
+    <a href="index.html">🏠 Inicio</a>
 
-            <h2 class="fw-bold">🚀 Bienvenido</h2>
-            <p class="fs-5 mb-4">
-                Esta guía está pensada para la comunidad, para que aprender Git sea más claro y accesible.
-                Desde el menú lateral podrás acceder a los comandos más usados, ejemplos, buenas prácticas y
-                videos explicativos. Puedes consultarla en cualquier momento como referencia rápida.
-            </p>
-            <a href="#" data-page="pages/git-init.html" class="btn btn-success btn-lg">Comenzar</a>
+    <h6 id="basico" class="px-3 mt-3">📘 Básico</h6>
+    <a href="#" data-page="pages/git-init.html">🚀 git init</a>
+    <a href="#" data-page="pages/git-clone.html">📥 git clone</a>
+    <a href="#" data-page="pages/git-add.html">➕ git add</a>
+    <a href="#" data-page="pages/git-commit.html">💾 git commit</a>
+    <a href="#" data-page="pages/git-status.html">📋 git status</a>
+
+    <h6 id="medio" class="px-3 mt-3">📗 Medio</h6>
+    <a href="#" data-page="pages/git-branch.html">🌿 git branch</a>
+    <a href="#" data-page="pages/git-checkout.html">🔄 git checkout</a>
+    <a href="#" data-page="pages/git-merge.html">🔀 git merge</a>
+    <a href="#" data-page="pages/git-log.html">📜 git log</a>
+
+    <h6 id="avanzado" class="px-3 mt-3">📕 Avanzado</h6>
+    <a href="#" data-page="pages/git-rebase.html">⬆️ git rebase</a>
+    <a href="#" data-page="pages/git-stash.html">📦 git stash</a>
+    <a href="#" data-page="pages/git-cherry-pick.html">🍒 git cherry-pick</a>
+    <a href="#" data-page="pages/git-reset.html">❌ git reset</a>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="content text-center">
+    <div id="contenido" class="mt-4 fade-in">
+      <div class="header">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="logo">
+        <h1 class="fw-bold display-4">Guía de Git y GitHub</h1>
+        <p class="text-muted fs-5">
+          Aprende los comandos más importantes de Git con ejemplos prácticos y tutoriales.
+        </p>
+      </div>
+
+      <h2 class="fw-bold">🚀 Bienvenido</h2>
+      <p class="fs-5 mb-4">
+        Esta guía está pensada para que aprender Git sea más claro y accesible.
+        Desde el menú lateral podrás acceder a los comandos más usados, ejemplos y buenas prácticas.
+      </p>
+      <a href="#" data-page="pages/git-init.html" class="btn btn-success btn-lg">Comenzar</a>
+
+      <!-- Cómo funciona Git -->
+      <section class="mt-5 center-section">
+        <h2 class="fw-bold">🔄 ¿Cómo funciona Git?</h2>
+        <p class="fs-5">Git organiza los cambios en tres áreas principales:</p>
+
+        <!-- Diagrama -->
+        <div class="git-diagram d-flex justify-content-center align-items-center mb-4">
+          <div class="git-box">Repositorio Local 🖥️</div>
+          <div class="arrow">➡️</div>
+          <div class="git-box">Staging Area 📂</div>
+          <div class="arrow">➡️</div>
+          <div class="git-box">Repositorio Remoto ☁️</div>
         </div>
 
-        <footer class="mt-5">
-            <hr>
-            <p>© 2025 Guía Git/GitHub | Hecho con ❤️ para desarrolladores</p>
-            <p class="fw-bold">🐕 José Miguel Castro Huayllas</p>
-        </footer>
+        <ul class="list-group mb-4 text-start">
+          <li class="list-group-item"><strong>Repositorio local</strong> 🖥️ — donde trabajas y editas tus archivos.</li>
+          <li class="list-group-item"><strong>Staging Area</strong> 📂 — donde preparas los cambios con <code>git add</code>.</li>
+          <li class="list-group-item"><strong>Repositorio remoto</strong> ☁️ — tu proyecto en la nube (ej: GitHub).</li>
+        </ul>
+      </section>
     </div>
+
+    <footer class="mt-5">
+      <hr>
+      <p>© 2025 Guía Git/GitHub | Hecho con <span class="text-danger">❤️</span></p>
+      <p class="fw-bold">🐕 José Miguel Castro Huayllas</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>

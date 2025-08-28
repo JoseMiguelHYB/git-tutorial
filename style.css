@@ -1,113 +1,126 @@
-/* Sidebar estilo GitHub */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 250px;
-    background-color: #0d1117; /* Negro estilo GitHub */
-    padding-top: 15px;
-    overflow-y: auto;
-    border-right: 1px solid #21262d;
-}
-
-/* Encabezado de la sidebar */
-.sidebar-header h5 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #c9d1d9;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Links del menú */
-.sidebar a {
-    display: block;
-    padding: 10px 20px;
-    color: #c9d1d9;
-    text-decoration: none;
-    font-size: 15px;
-    transition: all 0.3s ease;
-}
-
-.sidebar a:hover {
-    background-color: #21262d;
-    color: #58a6ff;
-    padding-left: 25px;
-    border-radius: 6px;
-}
-
-/* Títulos de secciones */
-.sidebar h6 {
-    font-size: 13px;
-    font-weight: bold;
-    color: #8b949e;
-    margin: 15px 0 5px 20px;
-}
-
-/* Contenido principal con estilo Git */
-.content {
-    margin-left: 250px;
-    padding: 25px;
-    background-color: #fefcf9; /* 🎨 fondo estilo Git */
-    min-height: 100vh;
-    color: #2c2c2c;           /* texto en gris oscuro */
+/* Fuente */
+body {
     font-family: "Georgia", serif; /* tipografía elegante como Git */
 }
 
-/* Botones */
-.btn {
-    border-radius: 10px;
-    background-color: #f05033; /* naranja Git */
-    color: white;
-    border: none;
-    padding: 8px 16px;
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #0d1117;
+  padding-top: 15px;
+  overflow-y: auto;
+  border-right: 1px solid #21262d;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
 }
 
-.btn:hover {
-    background-color: #c23c20;
-}
-
-/* Scroll suave */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Mantengo tu recorte del logo */
-.logo-git-container {
-  width: 200px;
-  height: 190px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.logo-git {
-  width: 240px;
-  height: 260px;
+.sidebar a {
   display: block;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
+  padding: 10px 20px;
+  font-size: 1.05rem;
+  color: #f8f9fa;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Logo GitHub */
+.sidebar a:hover {
+  background: linear-gradient(90deg, #238636 0%, #161b22 100%);
+  border-radius: 6px;
+  padding-left: 25px;
+}
+
+.sidebar h6 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 15px 0 5px 20px;
+}
+
+/* Colores por nivel */
+#basico { color: #6fbf73; }
+#medio { color: #d4a017; }
+#avanzado { color: #c96c6c; }
+
+/* Contenido */
+.content {
+  margin-left: 250px;
+  padding: 25px;
+  background-color: #fefcf9;
+  min-height: 100vh;
+  color: #2c2c2c;
+}
+
 .logo {
-    width: 400px;
-    margin-bottom: 20px;
+  width: 450px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease;
 }
 
-
-pre code {
-    color: #f8f9fa;           /* texto claro */
-    background: #212529;      /* fondo oscuro */
-    border: none;             /* quita bordes raros */
-    display: block;
-    padding: 1rem;
-    border-radius: 0.5rem;
+.btn {
+  border-radius: 10px;
+  padding: 10px 20px;
 }
 
+.btn-success {
+  background-color: #238636;
+  border: none;
+}
 
-pre code .comment {
-    color: #6c757d;  /* gris verdoso para comentarios */
-    font-style: italic;
+.btn-success:hover {
+  background-color: #196c2e;
+}
+
+/* Diagrama */
+.git-diagram .git-box {
+  background: #f0f6fc;
+  border: 2px solid #d0d7de;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+.git-diagram .arrow {
+  font-size: 1.5rem;
+  margin: 0 5px;
+}
+
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 2rem;
+  color: white;
+  background: #0d1117;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  .content {
+    margin-left: 0;
+  }
 }
