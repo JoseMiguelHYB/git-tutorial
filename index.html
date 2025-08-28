@@ -32,26 +32,61 @@
 
         <h6 id="basico" class="px-3 mt-3">📘 Básico</h6>
         <a href="#" data-page="pages/git-init.html">🚀 git init</a>
+        <a href="#" data-page="pages/git-config.html">⚙️ git config</a>
         <a href="#" data-page="pages/git-clone.html">📥 git clone</a>
         <a href="#" data-page="pages/git-add.html">➕ git add</a>
         <a href="#" data-page="pages/git-commit.html">💾 git commit</a>
         <a href="#" data-page="pages/git-status.html">📋 git status</a>
+        <a href="#" data-page="pages/git-log.html">📜 git log</a>
+        <a href="#" data-page="pages/git-diff.html">🔍 git diff</a>
+        <a href="#" data-page="pages/git-remote.html">🌐 git remote</a>
+        <a href="#" data-page="pages/git-push.html">🚀 git push</a>
+        <a href="#" data-page="pages/git-pull.html">⬇️ git pull</a>
+        <a href="#" data-page="pages/git-fetch.html">📡 git fetch</a>
+        <a href="#" data-page="pages/git-reset.html">❌ git reset</a>
 
         <h6 id="medio" class="px-3 mt-3">📗 Medio</h6>
         <a href="#" data-page="pages/git-branch.html">🌿 git branch</a>
         <a href="#" data-page="pages/git-checkout.html">🔄 git checkout</a>
         <a href="#" data-page="pages/git-merge.html">🔀 git merge</a>
-        <a href="#" data-page="pages/git-log.html">📜 git log</a>
+        <a href="#" data-page="pages/git-tag.html">🏷️ git tag</a>
+        <a href="#" data-page="pages/git-show.html">👀 git show</a>
+        <a href="#" data-page="pages/git-rm.html">🗑️ git rm</a>
+        <a href="#" data-page="pages/git-mv.html">📂 git mv</a>
+        <a href="#" data-page="pages/git-blame.html">🔎 git blame</a>
+        <a href="#" data-page="pages/git-revert.html">⏪ git revert</a>
 
         <h6 id="avanzado" class="px-3 mt-3">📕 Avanzado</h6>
         <a href="#" data-page="pages/git-rebase.html">⬆️ git rebase</a>
         <a href="#" data-page="pages/git-stash.html">📦 git stash</a>
         <a href="#" data-page="pages/git-cherry-pick.html">🍒 git cherry-pick</a>
-        <a href="#" data-page="pages/git-reset.html">❌ git reset</a>
+        <a href="#" data-page="pages/git-bisect.html">🎯 git bisect</a>
+        <a href="#" data-page="pages/git-submodule.html">📚 git submodule</a>
+        <a href="#" data-page="pages/git-clean.html">🧹 git clean</a>
+        <a href="#" data-page="pages/git-filter-branch.html">🧪 git filter-branch</a>
+        <a href="#" data-page="pages/git-reflog.html">📖 git reflog</a>
+
     </div>
 
     <!-- Contenido principal -->
     <div class="content text-center">
+        <!-- 🔍 Buscador de comandos -->
+
+        <!-- Contenedor del buscador -->
+        <div id="buscador">
+            <!-- Resultado del buscador -->
+            <div id="resultado" class="mt-4 fade-in">
+                <h3>ℹ️ Información del comando</h3>
+            </div>
+
+            <!-- Caja de búsqueda -->
+            <div class="search-box my-5 d-flex justify-content-center">
+                <input type="text" id="searchInput" class="form-control w-50"
+                    placeholder="Escribe un comando (ej: commit)">
+                <button class="btn btn-primary ms-3" onclick="buscarComando()">Buscar</button>
+            </div>
+        </div>
+
         <div id="contenido" class="mt-4 fade-in">
             <div class="header">
                 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo"
@@ -87,7 +122,8 @@
                     <li class="list-group-item"><strong>Repositorio local</strong> 🖥️ — donde trabajas y editas tus
                         archivos.</li>
                     <li class="list-group-item"><strong>Staging Area</strong> 📂 — donde preparas los cambios con
-                        <code>git add</code>.</li>
+                        <code>git add</code>.
+                    </li>
                     <li class="list-group-item"><strong>Repositorio remoto</strong> ☁️ — tu proyecto en la nube (ej:
                         GitHub).</li>
                 </ul>

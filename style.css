@@ -163,3 +163,10 @@ body {
   color: #ffffff !important;  /* texto blanco */
   font-weight: 600;
 }
+
+
+/* Agrandar el texto de todos los <code> */
+code.grande {
+  font-size: 24px;
+  font-weight: bold; /* opcional, para más énfasis */
+}

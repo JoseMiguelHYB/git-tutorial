@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("[data-page]");
   const contenido = document.getElementById("contenido");
+  const buscador = document.getElementById("buscador"); // capturamos el buscador
 
   async function loadPage(url) {
     try {
@@ -18,13 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const page = link.getAttribute("data-page");
 
-      // 🔹 Quitar "active" de todos los enlaces
+      // Quitar "active" de todos los enlaces
       links.forEach(l => l.classList.remove("active"));
 
-      // 🔹 Marcar en verde el enlace clicado
+      // Marcar en verde el enlace clicado
       link.classList.add("active");
 
-      if (page) loadPage(page);
+      if (page) {
+        loadPage(page);
+        buscador.style.display = "none"; // ocultar buscador al cargar un comando
+      } else {
+        buscador.style.display = "block"; // mostrar buscador si no hay página (ej: index)
+      }
     });
   });
 });
@@ -63,3 +69,5 @@ document.addEventListener("click", e => {
     document.getElementById("contador-visitas").textContent = 
         `👀 Has visitado esta página ${visitas} veces desde este navegador.`;
 });*/
+
+
