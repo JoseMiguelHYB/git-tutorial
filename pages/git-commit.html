@@ -13,7 +13,7 @@
 <body class="bg-light">
 
     <div class="header mb-4 text-center">
-        <h1 class="fw-bold display-5">✨ git commit</h1>
+        <h1 class="fw-bold display-5"> git commit</h1>
         <p class="text-muted fs-5">Guarda los cambios preparados en el historial del repositorio.</p>
     </div>
 
@@ -34,16 +34,45 @@
             <pre class="bg-dark text-light p-3 rounded"><code>git commit -m "Mensaje"</code></pre>
         </div>
 
-        <!-- Ejemplo avanzado -->
-        <div class="card shadow-sm mb-4 p-4">
-            <h3 class="fw-bold mb-3">🛠 Ejemplo avanzado</h3>
-            <pre class="bg-dark text-light p-3 rounded"><code># Añadimos varios archivos
-git add src/*.java
+        <!-- Ejemplo real -->
+        <!-- Ejemplo real -->
+<div class="card shadow-sm mb-4 p-4">
+    <h3 class="fw-bold mb-3">🏢 Ejemplo real</h3>
+    <p class="fs-5">
+        Imagina que tu jefe te dice: <em>“Miguel, necesitamos que hagas commit con la nueva
+        función de login para que el equipo pueda probarla.”</em>
+    </p>
+    <pre class="bg-dark text-light p-3 rounded"><code># Guardamos el cambio con un mensaje claro
+git commit -m "Add login function with validations"</code></pre>
 
-git commit -m "Añadidas clases de lógica" \
-           -m "Se implementó la capa de negocio con validaciones."
-</code></pre>
-        </div>
+    <div class="mt-4">
+        <h5 class="fw-bold">🔎 Desglose del comando</h5>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <code>git</code><br>
+                <small>Es el programa que ejecutamos. Git es el sistema de control de versiones que gestiona el
+                    historial del proyecto.</small>
+            </li>
+            <li class="list-group-item">
+                <code>commit</code><br>
+                <small>Acción que guarda los cambios preparados (<em>staged</em>) en el historial, creando un
+                    nuevo “punto de control”.</small>
+            </li>
+            <li class="list-group-item">
+                <code>-m</code><br>
+                <small>Opción para incluir el mensaje directamente en la línea de comandos.
+                    Sin <code>-m</code>, se abriría el editor de texto por defecto.</small>
+            </li>
+            <li class="list-group-item">
+                <code>"Add login function with validations"</code><br>
+                <small>El mensaje del commit. Debe ser breve y claro para que otros (y tú mismo en el futuro)
+                    entiendan qué se cambió.</small>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
 
         <!-- Video recomendado -->
         <div class="card shadow-sm mb-4 p-4">
@@ -57,9 +86,9 @@ git commit -m "Añadidas clases de lógica" \
         <section class="my-5">
             <h2 class="fw-bold">💡 Tips & Trucos</h2>
             <ul>
-                <li>Puedes usar <code>git commit -am "msg"</code> para añadir y commitear en un solo paso.</li>
-                <li>Escribe mensajes cortos pero descriptivos (menos de 50 caracteres si puedes).</li>
-                <li>Usa <code>git commit --amend</code> para corregir el último commit.</li>
+                <p>Puedes usar <code>git commit -am "msg"</code> para añadir y commitear en un solo paso.</p>
+                <p>Escribe mensajes cortos pero descriptivos (menos de 50 caracteres si puedes).</p>
+                <p>Usa <code>git commit --amend</code> para corregir el último commit.</p>
             </ul>
         </section>
 
@@ -78,11 +107,11 @@ git commit -m "Añadidas clases de lógica" \
         <section class="my-5">
             <h2 class="fw-bold">✔️ Buenas prácticas</h2>
             <ol>
-                <li>Usa el imperativo: <em>Add</em>, <em>Fix</em>, <em>Update</em> en vez de <em>Added</em> o
+                <p>Usa el imperativo: <em>Add</em>, <em>Fix</em>, <em>Update</em> en vez de <em>Added</em> o
                     <em>Fixed</em>.
-                </li>
-                <li>Agrupa cambios relacionados en un solo commit.</li>
-                <li>Evita commits gigantes, hazlos pequeños y enfocados.</li>
+                </p>
+                <p>Agrupa cambios relacionados en un solo commit.</p>
+                <p>Evita commits gigantes, hazlos pequeños y enfocados.</p>
             </ol>
         </section>
 

@@ -75,8 +75,8 @@ html {
 
 /* Mantengo tu recorte del logo */
 .logo-git-container {
-  width: 180px;
-  height: 200px;
+  width: 200px;
+  height: 190px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
@@ -94,4 +94,20 @@ html {
 .logo {
     width: 400px;
     margin-bottom: 20px;
+}
+
+
+pre code {
+    color: #f8f9fa;           /* texto claro */
+    background: #212529;      /* fondo oscuro */
+    border: none;             /* quita bordes raros */
+    display: block;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+
+pre code .comment {
+    color: #6c757d;  /* gris verdoso para comentarios */
+    font-style: italic;
 }
