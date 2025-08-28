@@ -154,3 +154,12 @@ body {
 .logo-git:hover {
   transform: scale(1.05);
 }
+
+
+.sidebar a.active {
+  background: linear-gradient(90deg, #238636 0%, #161b22 100%);
+  border-radius: 6px;
+  padding-left: 25px;
+  color: #ffffff !important;  /* texto blanco */
+  font-weight: 600;
+}

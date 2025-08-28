@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const res = await fetch(url);
       const html = await res.text();
-
-      // Insertamos todo el contenido que venga del archivo
       contenido.innerHTML = html;
     } catch (err) {
       contenido.innerHTML = `<p class="text-danger">⚠ Error al cargar ${url}</p>`;
@@ -19,10 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", e => {
       e.preventDefault();
       const page = link.getAttribute("data-page");
+
+      // 🔹 Quitar "active" de todos los enlaces
+      links.forEach(l => l.classList.remove("active"));
+
+      // 🔹 Marcar en verde el enlace clicado
+      link.classList.add("active");
+
       if (page) loadPage(page);
     });
   });
 });
+
 
 
 // scripto generico
