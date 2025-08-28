@@ -53,17 +53,17 @@ body {
 #medio { color: #d4a017; }
 #avanzado { color: #c96c6c; }
 
-/* Contenido */
 .content {
-  margin-left: 320px; /* AIGUAL AL ANCHI DE LA SIDEBAR***/
+  margin-left: 320px; /* ancho de la sidebar */
   padding: 25px;
   background-color: #fefcf9;
   min-height: 100vh;
   color: #2c2c2c;
 }
 
+
 .logo {
-  width: 450px;
+  width: 350px;
   margin-bottom: 20px;
   animation: fadeIn 1.5s ease;
 }
@@ -137,7 +137,7 @@ body {
 
 /* Contenedor del logo de Git */
 .logo-git-container {
-  width: 230px;         /* más pequeño que antes */
+  width: 220px;         /* más pequeño que antes */
   margin: 0 auto;       /* centrado */
 }
 
