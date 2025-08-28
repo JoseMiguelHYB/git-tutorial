@@ -111,22 +111,13 @@
 
                 <!-- Diagrama -->
                 <div class="git-diagram d-flex justify-content-center align-items-center mb-4">
-                    <div class="git-box">Repositorio Local 🖥️</div>
+                    <div class="git-box" data-info="Donde trabajas y editas tus archivos.">Repositorio Local 🖥️</div>
                     <div class="arrow">➡️</div>
-                    <div class="git-box">Staging Area 📂</div>
+                    <div class="git-box" data-info="Donde preparas los cambios con git add.">Staging Area 📂</div>
                     <div class="arrow">➡️</div>
-                    <div class="git-box">Repositorio Remoto ☁️</div>
+                    <div class="git-box" data-info="Tu proyecto en la nube (ej: GitHub).">Repositorio Remoto ☁️</div>
                 </div>
-
-                <ul class="list-group mb-4 text-center">
-                    <li class="list-group-item"><strong>Repositorio local</strong> 🖥️ — donde trabajas y editas tus
-                        archivos.</li>
-                    <li class="list-group-item"><strong>Staging Area</strong> 📂 — donde preparas los cambios con
-                        <code>git add</code>.
-                    </li>
-                    <li class="list-group-item"><strong>Repositorio remoto</strong> ☁️ — tu proyecto en la nube (ej:
-                        GitHub).</li>
-                </ul>
+                <div id="gitInfo" class="git-info"></div>
 
             </section>
         </div>

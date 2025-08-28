@@ -1,4 +1,160 @@
-<div class="text-center p-5">
-  <h2>👷 Estamos trabajando en ello...</h2>
-  <p class="fs-5 text-muted">Muy pronto encontrarás aquí el tutorial de <code>git init</code>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: git init</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <div class="header mb-4 text-center">
+    <h1 class="fw-bold display-5"> 🚀 git init</h1>
+    <p class="text-muted fs-5">Crea un nuevo repositorio de Git en tu carpeta actual.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ¿Qué hace? -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h3 class="fw-bold mb-3">📌 ¿Qué hace?</h3>
+      <p class="fs-5">
+        El comando <code class="text-danger">git init</code> convierte una carpeta cualquiera en un
+        <strong>repositorio Git</strong>, es decir, un proyecto donde Git controlará los cambios.
+      </p>
+    </div>
+
+    <!-- Sintaxis básica -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h3 class="fw-bold mb-3">⚡ Sintaxis básica</h3>
+      <pre class="bg-dark text-light p-3 rounded"><code>git init</code></pre>
+    </div>
+
+    <!-- Ejemplo real -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h3 class="fw-bold mb-3">🏢 Ejemplo real</h3>
+      <p class="fs-5">
+        Imagina que empiezas un nuevo proyecto en una carpeta llamada <em>mi-app</em>.
+        Lo primero es inicializar Git para comenzar a llevar el control de versiones.
+      </p>
+      <pre class="bg-dark text-light p-3 rounded"><code>mkdir mi-app
+cd mi-app
+git init</code></pre>
+
+      <div class="mt-4">
+        <h5 class="fw-bold">🔎 Desglose del comando</h5>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <code class="grande">git</code>
+            <p>Es el programa que ejecutamos: Git, el sistema de control de versiones.</p>
+          </li>
+          <li class="list-group-item">
+            <code class="grande">init</code><br>
+            <p>Orden que inicializa el repositorio en la carpeta actual, creando la carpeta oculta
+              <code>.git</code> con toda la configuración interna.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Video recomendado -->
+    <div class="card shadow-sm mb-4 p-4 text-center">
+      <h3 class="fw-bold mb-3">🎥 Video recomendado</h3>
+      <div class="ratio ratio-16x9 bg-light border rounded position-relative">
+
+        <!-- Contenido centrado -->
+        <div class="position-absolute top-50 start-50 translate-middle text-center">
+          <i class="bi bi-youtube" style="font-size: 4rem; color: #dc3545;"></i>
+          <div class="fw-bold fs-5 mt-2">⏳ Video no disponible</div>
+          <small class="text-muted">Próximamente añadiremos un recurso aquí</small>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Tips & Trucos -->
+    <section class="my-5">
+      <h2 class="fw-bold">💡 Tips & Trucos</h2>
+      <p style="font-size: 1.2rem; line-height: 1.6;">
+        No uses <code>git init</code> dentro de un repositorio ya existente: causará conflictos.
+      </p>
+      <p style="font-size: 1.2rem; line-height: 1.6;">
+        Usa <code>git status</code> justo después de un <code>git init</code> para confirmar que todo está vacío.
+      </p>
+      <p style="font-size: 1.2rem; line-height: 1.6;">
+        Si clonas un repositorio con <code>git clone</code>, no necesitas <code>git init</code>.
+      </p>
+    </section>
+
+    <!-- Errores comunes -->
+    <section class="my-5">
+      <h2 class="fw-bold" style="font-size: 1.6rem; margin-bottom: 1rem;">
+        ⚠️ Errores comunes
+      </h2>
+      <ul class="list-group" style="font-size: 1.2rem; line-height: 1.6;">
+        <li class="list-group-item">
+          ❌ Ejecutar <code>git init</code> en cada carpeta → no es necesario, solo en la raíz del proyecto.
+        </li>
+        <li class="list-group-item">
+          ❌ Confundir <code>git init</code> con <code>git clone</code>.
+          <em>Init</em> crea un repo vacío, <em>clone</em> copia uno ya existente.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Buenas prácticas -->
+    <section class="my-5">
+      <h2 class="fw-bold" style="font-size: 1.6rem; margin-bottom: 1rem;">✔️ Buenas prácticas</h2>
+      <p style="font-size: 1.2rem; line-height: 1.6;">
+        Inicializa el repositorio en la raíz de tu proyecto, no en subcarpetas.
+      </p>
+      <p style="font-size: 1.2rem; line-height: 1.6;">
+        Después de un <code>git init</code>, lo primero es configurar tu identidad:
+        <code>git config user.name "Tu Nombre"</code>
+        <code>git config user.email "tu@email.com"</code>
+      </p>
+    </section>
+
+    <!-- Mini Quiz -->
+    <section class="my-5">
+      <h2 class="fw-bold" style="font-size: 1.6rem; margin-bottom: 1rem;">🎮 Mini Quiz</h2>
+      <p style="font-size: 1.2rem; line-height: 1.6;">
+        ¿Qué crea el comando <code>git init</code> en tu carpeta?
+      </p>
+
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ ¡Correcto! Crea la carpeta oculta .git con toda la configuración del repositorio."
+        style="font-size: 1.2rem; margin-bottom: 0.5rem;">
+        Una carpeta oculta <code>.git</code>
+      </button>
+
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No clona repositorios, eso lo hace git clone."
+        style="font-size: 1.2rem; margin-bottom: 0.5rem;">
+        Clona un repositorio de GitHub
+      </button>
+
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No borra nada, solo inicializa." style="font-size: 1.2rem; margin-bottom: 0.5rem;">
+        Borra el contenido de la carpeta
+      </button>
+
+      <p id="quiz-feedback" class="mt-3 fw-bold" style="font-size: 1.2rem;"></p>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script del Quiz -->
+  <script src="assets/js/git-init.js"></script>
+</body>
+
+</html>

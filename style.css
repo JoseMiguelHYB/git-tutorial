@@ -170,3 +170,20 @@ code.grande {
   font-size: 24px;
   font-weight: bold; /* opcional, para más énfasis */
 }
+
+
+
+  .git-info {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    min-height: 40px; /* 🔹 Siempre ocupa espacio */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .git-info.show {
+    opacity: 1; /* 🔹 Solo cambia opacidad, no espacio */
+  }
+

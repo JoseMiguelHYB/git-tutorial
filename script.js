@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 // scripto generico
 document.addEventListener("click", e => {
   if (e.target.classList.contains("quiz-btn")) {
@@ -71,3 +70,16 @@ document.addEventListener("click", e => {
 });*/
 
 
+  const boxes = document.querySelectorAll('.git-box');
+  const infoBox = document.getElementById('gitInfo');
+
+  boxes.forEach(box => {
+    box.addEventListener('mouseenter', () => {
+      infoBox.textContent = box.getAttribute('data-info');
+      infoBox.classList.add('show');
+    });
+    box.addEventListener('mouseleave', () => {
+      infoBox.classList.remove('show');
+      infoBox.textContent = ""; // opcional: limpiar texto
+    });
+  });
