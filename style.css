@@ -9,7 +9,7 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 250px;
+  width: 320px; /** EL ANCHO DEL sidebar **/
   background-color: #0d1117;
   padding-top: 15px;
   overflow-y: auto;
@@ -55,7 +55,7 @@ body {
 
 /* Contenido */
 .content {
-  margin-left: 250px;
+  margin-left: 320px; /* AIGUAL AL ANCHI DE LA SIDEBAR***/
   padding: 25px;
   background-color: #fefcf9;
   min-height: 100vh;
