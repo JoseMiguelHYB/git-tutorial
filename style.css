@@ -1,0 +1,97 @@
+/* Sidebar estilo GitHub */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #0d1117; /* Negro estilo GitHub */
+    padding-top: 15px;
+    overflow-y: auto;
+    border-right: 1px solid #21262d;
+}
+
+/* Encabezado de la sidebar */
+.sidebar-header h5 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #c9d1d9;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Links del menú */
+.sidebar a {
+    display: block;
+    padding: 10px 20px;
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #21262d;
+    color: #58a6ff;
+    padding-left: 25px;
+    border-radius: 6px;
+}
+
+/* Títulos de secciones */
+.sidebar h6 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #8b949e;
+    margin: 15px 0 5px 20px;
+}
+
+/* Contenido principal con estilo Git */
+.content {
+    margin-left: 250px;
+    padding: 25px;
+    background-color: #fefcf9; /* 🎨 fondo estilo Git */
+    min-height: 100vh;
+    color: #2c2c2c;           /* texto en gris oscuro */
+    font-family: "Georgia", serif; /* tipografía elegante como Git */
+}
+
+/* Botones */
+.btn {
+    border-radius: 10px;
+    background-color: #f05033; /* naranja Git */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+}
+
+.btn:hover {
+    background-color: #c23c20;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mantengo tu recorte del logo */
+.logo-git-container {
+  width: 180px;
+  height: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.logo-git {
+  width: 240px;
+  height: 260px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+/* Logo GitHub */
+.logo {
+    width: 400px;
+    margin-bottom: 20px;
+}
