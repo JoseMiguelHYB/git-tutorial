@@ -341,3 +341,34 @@ main header {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     animation: fadeIn 1.5s ease;
 }
+
+/********************Estilos para cada comando********************************/
+body {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h2,
+h3 {
+  font-size: 1.5rem;
+}
+
+code {
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+  color: #d6336c;
+}
+
+pre {
+  font-size: 1rem;
+}
+
+.tip,
+.error,
+.practice {
+  margin-bottom: .6rem;
+}

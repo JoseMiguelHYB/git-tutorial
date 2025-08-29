@@ -9,38 +9,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS global -->
-    <style>
-        body {
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        h1 {
-            font-size: 2.3rem;
-        }
-
-        h2,
-        h3 {
-            font-size: 1.5rem;
-        }
-
-        code {
-            font-family: "Fira Code", monospace;
-            font-size: 1rem;
-            color: #d6336c;
-        }
-
-        pre {
-            font-size: 1rem;
-        }
-
-        .tip,
-        .error,
-        .practice {
-            margin-bottom: .6rem;
-        }
-    </style>
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-light">
@@ -101,18 +71,26 @@ git commit -m "Fix bug in user authentication"</code></pre>
             <p class="tip">⚡ <code>git commit --date="2023-12-01"</code> → establece una fecha personalizada.</p>
         </div>
 
-        <!-- Buenas prácticas y errores comunes -->
+        <!-- Buenas prácticas -->
         <div class="card shadow-sm mb-4 p-4">
-            <h2 class="fw-bold mb-3">✔️ Buenas prácticas y ⚠️ errores comunes</h2>
+            <h2 class="fw-bold mb-3">✔️ Buenas prácticas</h2>
             <ul>
                 <p>✔️ Usa el imperativo: <em>Add</em>, <em>Fix</em>, <em>Update</em>.</p>
                 <p>✔️ Mensajes cortos y claros (máx. 50 caracteres en la primera línea).</p>
                 <p>✔️ Si necesitas más detalle, añade una segunda línea.</p>
                 <p>✔️ Agrupa cambios relacionados en un commit pequeño y enfocado.</p>
+            </ul>
+        </div>
+
+        <!-- Errores comunes -->
+        <div class="card shadow-sm mb-4 p-4">
+            <h2 class="fw-bold mb-3">⚠️ Errores comunes</h2>
+            <ul>
                 <p>⚠️ No uses mensajes genéricos como <em>"Update"</em> o <em>"Fix"</em>.</p>
                 <p>⚠️ Evita commits gigantes con muchos cambios mezclados.</p>
             </ul>
         </div>
+
 
         <!-- Mini Quiz -->
         <section class="my-5">
