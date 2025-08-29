@@ -2,177 +2,179 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutorial: git commit</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: git commit</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS global -->
+  <style>
+    /* ======= Estilos generales ======= */
+    body {
+      font-size: 1.1rem; /* base uniforme para todo el texto */
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.3rem; /* solo el título principal más grande */
+    }
+
+    h2,
+    h3 {
+      font-size: 1.5rem; /* todos los subtítulos igual */
+    }
+
+    p,
+    li {
+      font-size: 1.1rem; /* contenido uniforme */
+    }
+
+    code {
+      font-family: "Fira Code", monospace;
+      font-size: 1rem;
+      color: #d6336c;
+    }
+
+    pre {
+      font-size: 1rem;
+    }
+  </style>
 </head>
 
 <body class="bg-light">
 
-    <div class="header mb-4 text-center">
-        <h1 class="fw-bold display-5"> 💾 git commit</h1>
-        <p class="text-muted fs-5">Guarda los cambios preparados en el historial del repositorio.</p>
+  <div class="header mb-4 text-center">
+    <h1 class="fw-bold">💾 git commit</h1>
+    <p class="text-muted">Guarda los cambios preparados en el historial del repositorio.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ¿Qué hace? -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📌 ¿Qué hace?</h2>
+      <p>
+        El comando <code>git commit</code> guarda los cambios preparados
+        (<em>staged</em>) en el historial del repositorio.
+      </p>
     </div>
 
-    <div class="container">
+    <!-- Sintaxis básica -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚡ Sintaxis básica</h2>
+      <pre class="bg-dark text-light p-3 rounded"><code>git commit -m "Mensaje"</code></pre>
+    </div>
 
-        <!-- ¿Qué hace? -->
-        <div class="card shadow-sm mb-4 p-4">
-            <h3 class="fw-bold mb-3">📌 ¿Qué hace?</h3>
-            <p class="fs-5">
-                El comando <code class="text-danger">git commit</code> guarda los cambios preparados
-                (<em>staged</em>) en el historial del repositorio.
-            </p>
-        </div>
-
-        <!-- Sintaxis básica -->
-        <div class="card shadow-sm mb-4 p-4">
-            <h3 class="fw-bold mb-3">⚡ Sintaxis básica</h3>
-            <pre class="bg-dark text-light p-3 rounded"><code>git commit -m "Mensaje"</code></pre>
-        </div>
-
-        <!-- Ejemplo real -->
-        <!-- Ejemplo real -->
-        <div class="card shadow-sm mb-4 p-4">
-            <h3 class="fw-bold mb-3">🏢 Ejemplo real</h3>
-            <p class="fs-5">
-                Imagina que tu jefe te dice: <em>“Miguel, necesitamos que hagas commit con la nueva
-                    función de login para que el equipo pueda probarla.”</em>
-            </p>
-            <pre class="bg-dark text-light p-3 rounded"><code># Guardamos el cambio con un mensaje claro
+    <!-- Ejemplo real -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">🏢 Ejemplo real</h2>
+      <p>
+        Imagina que tu jefe te dice: <em>“Miguel, necesitamos que hagas commit con la nueva
+          función de login para que el equipo pueda probarla.”</em>
+      </p>
+      <pre class="bg-dark text-light p-3 rounded"><code># Guardamos el cambio con un mensaje claro
 git commit -m "Add login function with validations"</code></pre>
 
-            <div class="mt-4">
-                <h5 class="fw-bold">🔎 Desglose del comando</h5>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <code class="grande">git</code>
-                        <p>Es el programa que ejecutamos. Git es el sistema de control de versiones que gestiona el
-                            historial del proyecto.</p>
-                    </li>
-                    <li class="list-group-item">
-                        <code class="grande">commit</code><br>
-                        <p>Acción que guarda los cambios preparados (<em>staged</em>) en el historial, creando un
-                            nuevo “punto de control”.</p>
-                    </li>
-                    <li class="list-group-item">
-                        <code class="grande">-m</code><br>
-                        <p>Opción para incluir el mensaje directamente en la línea de comandos.
-                            Sin <code>-m</code>, se abriría el editor de texto por defecto.</p>
-                    </li>
-                    <li class="list-group-item">
-                        <code class="grande">"Add login function with validations"</code><br>
-                        <p>El mensaje del commit. Debe ser breve y claro para que otros (y tú mismo en el futuro)
-                            entiendan qué se cambió.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Video recomendado -->
-        <div class="card shadow-sm mb-4 p-4">
-            <h3 class="fw-bold mb-3">🎥 Video recomendado</h3>
-            <div class="ratio ratio-16x9">
-                <iframe src="https://www.youtube.com/embed/tEbAKQx_G-s" title="Video recomendado Git Commit"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-
-        <!-- Tips & Trucos -->
-        <section class="my-5">
-            <h2 class="fw-bold">💡 Tips & Trucos</h2>
-            <ul>
-                <p style="font-size: 1.2rem; line-height: 1.6;">
-                    Puedes usar <code>git commit -am "msg"</code> para añadir y commitear en un solo paso.
-                </p>
-                <p style="font-size: 1.2rem; line-height: 1.6;">
-                    Escribe mensajes cortos pero descriptivos (menos de 50 caracteres si puedes).
-                </p>
-                <p style="font-size: 1.2rem; line-height: 1.6;">
-                    Usa <code>git commit --amend</code> para corregir el último commit.
-                </p>
-
-            </ul>
-        </section>
-
-        <!-- Errores comunes -->
-        <section class="my-5">
-            <h2 class="fw-bold" style="font-size: 1.6rem; margin-bottom: 1rem;">
-                ⚠️ Errores comunes
-            </h2>
-            <ul class="list-group" style="font-size: 1.2rem; line-height: 1.6;">
-                <li class="list-group-item" style="font-size: 1.2rem;">
-                    ❌ Olvidar <code style="font-size: 1.1rem;">-m</code> → Git abre el editor por defecto.
-                </li>
-                <li class="list-group-item" style="font-size: 1.2rem;">
-                    ❌ Usar mensajes genéricos como <em style="font-size: 1.1rem;">"Update"</em> o <em
-                        style="font-size: 1.1rem;">"Fix"</em>.
-                </li>
-                <li class="list-group-item" style="font-size: 1.2rem;">
-                    ✅ Solución: mensajes claros como <em style="font-size: 1.1rem;">"Fix login bug en formulario"</em>.
-                </li>
-            </ul>
-        </section>
-
-
-        <!-- Buenas prácticas -->
-        <section class="my-5">
-            <h2 class="fw-bold" style="font-size: 1.6rem; margin-bottom: 1rem;">✔️ Buenas prácticas</h2>
-            <ol style="font-size: 1.2rem; line-height: 1.6;">
-                <p style="font-size: 1.2rem; line-height: 1.6;">
-                    Usa el imperativo: <em style="font-size: 1.1rem;">Add</em>, <em style="font-size: 1.1rem;">Fix</em>,
-                    <em style="font-size: 1.1rem;">Update</em> en vez de <em style="font-size: 1.1rem;">Added</em> o <em
-                        style="font-size: 1.1rem;">Fixed</em>.
-                </p>
-                <p style="font-size: 1.2rem; line-height: 1.6;">Agrupa cambios relacionados en un solo commit.</p>
-                <p style="font-size: 1.2rem; line-height: 1.6;">Evita commits gigantes, hazlos pequeños y enfocados.</p>
-            </ol>
-        </section>
-
-        <!-- Mini Quiz -->
-        <section class="my-5">
-            <h2 class="fw-bold" style="font-size: 1.6rem; margin-bottom: 1rem;">🎮 Mini Quiz</h2>
-            <p style="font-size: 1.2rem; line-height: 1.6;">
-                ¿Qué hace el flag <code style="font-size: 1.1rem;">-m</code> en <code
-                    style="font-size: 1.1rem;">git commit</code>?
-            </p>
-
-            <button class="btn btn-outline-primary quiz-btn" data-correct="true"
-                data-feedback="✅ ¡Correcto! El flag -m sirve para escribir el mensaje."
-                style="font-size: 1.2rem; margin-bottom: 0.5rem;">
-                Permite añadir un mensaje en línea
-            </button>
-
-            <button class="btn btn-outline-primary quiz-btn" data-correct="false"
-                data-feedback="❌ Incorrecto. No elimina commits, solo añade un mensaje."
-                style="font-size: 1.2rem; margin-bottom: 0.5rem;">
-                Elimina todos los commits anteriores
-            </button>
-
-            <button class="btn btn-outline-primary quiz-btn" data-correct="false"
-                data-feedback="❌ Incorrecto. No mueve commits a otra rama."
-                style="font-size: 1.2rem; margin-bottom: 0.5rem;">
-                Mueve el commit a otra rama
-            </button>
-
-            <p id="quiz-feedback" class="mt-3 fw-bold" style="font-size: 1.2rem;"></p>
-        </section>
-
-
-
+      <div class="mt-4">
+        <h3 class="fw-bold">🔎 Desglose del comando</h3>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <code>git</code>
+            <p>Es el programa que ejecutamos. Git es el sistema de control de versiones que gestiona el
+              historial del proyecto.</p>
+          </li>
+          <li class="list-group-item">
+            <code>commit</code>
+            <p>Acción que guarda los cambios preparados (<em>staged</em>) en el historial, creando un
+              nuevo “punto de control”.</p>
+          </li>
+          <li class="list-group-item">
+            <code>-m</code>
+            <p>Opción para incluir el mensaje directamente en la línea de comandos.
+              Sin <code>-m</code>, se abriría el editor de texto por defecto.</p>
+          </li>
+          <li class="list-group-item">
+            <code>"Add login function with validations"</code>
+            <p>El mensaje del commit. Debe ser breve y claro para que otros (y tú mismo en el futuro)
+              entiendan qué se cambió.</p>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Video recomendado -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">🎥 Video recomendado</h2>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/tEbAKQx_G-s" title="Video recomendado Git Commit" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
 
-    <!-- Script del Quiz -->
-    <script src="assets/js/git-commit.js"></script>
+    <!-- Tips & Trucos -->
+    <section class="my-5">
+      <h2 class="fw-bold">💡 Tips & Trucos</h2>
+      <ul>
+        <li>Puedes usar <code>git commit -am "msg"</code> para añadir y commitear en un solo paso.</li>
+        <li>Escribe mensajes cortos pero descriptivos (menos de 50 caracteres si puedes).</li>
+        <li>Usa <code>git commit --amend</code> para corregir el último commit.</li>
+      </ul>
+    </section>
+
+    <!-- Errores comunes -->
+    <section class="my-5">
+      <h2 class="fw-bold">⚠️ Errores comunes</h2>
+      <ul class="list-group">
+        <li class="list-group-item">❌ Olvidar <code>-m</code> → Git abre el editor por defecto.</li>
+        <li class="list-group-item">❌ Usar mensajes genéricos como <em>"Update"</em> o <em>"Fix"</em>.</li>
+        <li class="list-group-item">✅ Solución: mensajes claros como <em>"Fix login bug en formulario"</em>.</li>
+      </ul>
+    </section>
+
+    <!-- Buenas prácticas -->
+    <section class="my-5">
+      <h2 class="fw-bold">✔️ Buenas prácticas</h2>
+      <ol>
+        <li>Usa el imperativo: <em>Add</em>, <em>Fix</em>, <em>Update</em> en vez de <em>Added</em> o <em>Fixed</em>.
+        </li>
+        <li>Agrupa cambios relacionados en un solo commit.</li>
+        <li>Evita commits gigantes, hazlos pequeños y enfocados.</li>
+      </ol>
+    </section>
+
+    <!-- Mini Quiz -->
+    <section class="my-5">
+      <h2 class="fw-bold">🎮 Mini Quiz</h2>
+      <p>¿Qué hace el flag <code>-m</code> en <code>git commit</code>?</p>
+
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ ¡Correcto! El flag -m sirve para escribir el mensaje.">
+        Permite añadir un mensaje en línea
+      </button>
+
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No elimina commits, solo añade un mensaje.">
+        Elimina todos los commits anteriores
+      </button>
+
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No mueve commits a otra rama.">
+        Mueve el commit a otra rama
+      </button>
+
+      <p id="quiz-feedback" class="mt-3 fw-bold"></p>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script del Quiz -->
+  <script src="assets/js/git-commit.js"></script>
 </body>
 
 </html>
