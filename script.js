@@ -69,8 +69,6 @@ document.addEventListener("click", e => {
   }
 });
 
-
-
 // Script para mostrar info al pasar sobre los cuadros de Git
 const boxes = document.querySelectorAll('.git-box');
 const infoBox = document.getElementById('gitInfo');

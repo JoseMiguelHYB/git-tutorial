@@ -1,4 +1,166 @@
-<div class="text-center p-5">
-<h2>🦴 Mi perro aprobó este código con una pata arriba.</h2>
-  <p class="fs-5 text-muted">Muy pronto encontrarás aquí el tutorial de <code>git config</code>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: git config</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS global -->
+  <style>
+    body {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.3rem;
+    }
+
+    h2,
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    code {
+      font-family: "Fira Code", monospace;
+      font-size: 1rem;
+      color: #d6336c;
+    }
+
+    pre {
+      font-size: 1rem;
+    }
+
+    .tip,
+    .error,
+    .practice {
+      margin-bottom: .6rem;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+  <!-- ======= Encabezado principal ======= -->
+  <div class="header mb-4 text-center">
+    <h1 class="fw-bold">⚙️ git config</h1>
+    <p class="text-muted">Configura opciones de usuario y ajustes globales de Git.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ¿Qué hace? -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📌 ¿Qué hace?</h2>
+      <p>
+        El comando <code>git config</code> permite establecer variables de configuración que determinan el
+        comportamiento de Git.
+        Por ejemplo: tu nombre de usuario, tu correo, el editor de texto o reglas de formato.
+      </p>
+    </div>
+
+    <!-- Sintaxis básica -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚡ Sintaxis básica</h2>
+      <pre class="bg-dark text-light p-3 rounded"><code>git config [opciones] nombre.valor "contenido"</code></pre>
+      <p class="mt-2 text-muted">👉 La opción <code>--global</code> aplica el cambio para todos los repositorios.</p>
+    </div>
+
+    <!-- Ejemplo práctico -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📝 Ejemplo práctico</h2>
+      <p>Lo primero que debes hacer tras instalar Git es configurar tu identidad:</p>
+      <pre class="bg-dark text-light p-3 rounded"><code>git config --global user.name "Juan Pérez"
+git config --global user.email "juan@example.com"</code></pre>
+
+      <div class="mt-4">
+        <h3 class="fw-bold">🔎 Desglose del comando</h3>
+        <p>📌 <code>--global</code> → Aplica la configuración a nivel de usuario (todos los repositorios).</p>
+        <p>📌 <code>user.name</code> → Define el nombre de usuario que aparecerá en los commits.</p>
+        <p>📌 <code>user.email</code> → Define el correo asociado a los commits.</p>
+      </div>
+    </div>
+
+    <!-- Opciones comunes y avanzadas -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚙️ Opciones comunes y avanzadas</h2>
+      <p class="tip">⚡ <code>git config --list</code> → muestra todas las configuraciones activas.</p>
+      <p class="tip">⚡ <code>git config --system</code> → aplica la configuración a todo el sistema.</p>
+      <p class="tip">⚡ <code>git config --local</code> → configura opciones solo para el repositorio actual.</p>
+      <p class="tip">⚡ <code>git config core.editor "code --wait"</code> → establece un editor por defecto.</p>
+      <p class="tip">⚡ <code>git config --global color.ui auto</code> → activa colores en la salida de Git.</p>
+    </div>
+
+    <!-- Buenas prácticas -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">✔️ Buenas prácticas</h2>
+      <p>✔️ Configura tu identidad (<code>user.name</code> y <code>user.email</code>) justo después de instalar Git.</p>
+      <p>✔️ Usa correos profesionales o asociados a tu cuenta de GitHub/GitLab.</p>
+      <p>✔️ Configura también un editor preferido (ej: VS Code, Vim, Nano).</p>
+    </div>
+
+    <!-- Errores comunes -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚠️ Errores comunes</h2>
+      <p>⚠️ No configurar <code>user.name</code> y <code>user.email</code> antes de hacer commits.</p>
+      <p>⚠️ Usar un correo distinto al asociado en GitHub/GitLab → los commits pueden no vincularse.</p>
+      <p>⚠️ Creer que <code>git config</code> cambia configuraciones del sistema operativo → solo afecta a Git.</p>
+    </div>
+
+    <!-- Mini Quiz -->
+    <section class="my-5">
+      <h2 class="fw-bold">🎮 Mini Quiz</h2>
+
+      <!-- Pregunta 1 -->
+      <p><strong>1.</strong> ¿Qué hace el comando <code>git config --global user.email "tucorreo@example.com"</code>?
+      </p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ ¡Correcto! Define el correo global para tus commits." data-target="quiz-feedback-1">
+        Define el correo global para tus commits
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No crea repositorios." data-target="quiz-feedback-1">
+        Inicializa un nuevo repositorio
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No borra configuraciones." data-target="quiz-feedback-1">
+        Elimina tu configuración actual
+      </button>
+      <p id="quiz-feedback-1" class="mt-3 fw-bold"></p>
+
+      <!-- Pregunta 2 -->
+      <p class="mt-4"><strong>2.</strong> ¿Qué comando muestra todas tus configuraciones activas?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ Correcto: git config --list muestra todas las configuraciones." data-target="quiz-feedback-2">
+        git config --list
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. --global solo aplica a todos los repositorios, no muestra configuraciones."
+        data-target="quiz-feedback-2">
+        git config --global
+      </button>
+      <p id="quiz-feedback-2" class="mt-3 fw-bold"></p>
+    </section>
+
+    <!-- Recursos -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📚 Recursos</h2>
+      <p>🔗 Documentación oficial: <a href="https://git-scm.com/docs/git-config" target="_blank">git-config</a></p>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/tEbAKQx_G-s" title="Video recomendado Git Commit" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script del Quiz -->
+  <script src="assets/js/git-config.js"></script>
+</body>
+
+</html>
