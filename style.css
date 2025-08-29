@@ -372,3 +372,10 @@ pre {
 .practice {
   margin-bottom: .6rem;
 }
+
+
+/* Estilo especial para la sección EXTRA */
+.sidebar-content h6#extra {
+    color: #6fbf73; /* amarillo tipo "warning" */
+    font-weight: bold;
+}
