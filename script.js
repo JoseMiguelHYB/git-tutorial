@@ -1,9 +1,11 @@
-// script.js
+// Script principal
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("[data-page]");
+  const inicioLink = document.querySelector('nav a[href="index.html"]'); // el enlace de Inicio
   const contenido = document.getElementById("contenido");
   const buscador = document.getElementById("buscador"); // capturamos el buscador
 
+  // Función para cargar la página en el área de contenido
   async function loadPage(url) {
     try {
       const res = await fetch(url);
@@ -14,29 +16,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Función para activar un enlace
+  function setActive(link) {
+    // Quitar "active" de todos los enlaces
+    document.querySelectorAll(".sidebar a").forEach(l => l.classList.remove("active"));
+    // Marcar en verde el enlace clicado
+    link.classList.add("active");
+
+    const page = link.getAttribute("data-page");
+    if (page) {
+      loadPage(page);
+      buscador.style.display = "none"; // ocultar buscador al cargar un comando
+    } else {
+      buscador.style.display = "block"; // mostrar buscador si no hay página (ej: index)
+    }
+  }
+
+  // Eventos de clic en los enlaces
   links.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
-      const page = link.getAttribute("data-page");
-
-      // Quitar "active" de todos los enlaces
-      links.forEach(l => l.classList.remove("active"));
-
-      // Marcar en verde el enlace clicado
-      link.classList.add("active");
-
-      if (page) {
-        loadPage(page);
-        buscador.style.display = "none"; // ocultar buscador al cargar un comando
-      } else {
-        buscador.style.display = "block"; // mostrar buscador si no hay página (ej: index)
-      }
+      setActive(link);
     });
   });
+
+  // 🚀 Al cargar la página, activar por defecto "Inicio"
+  if (inicioLink) {
+    inicioLink.classList.add("active");
+    buscador.style.display = "block"; // mostrar buscador en inicio
+  }
 });
 
 
-// scripto generico
+// Script para quizzes
 document.addEventListener("click", e => {
   if (e.target.classList.contains("quiz-btn")) {
     const btn = e.target;
@@ -55,31 +67,17 @@ document.addEventListener("click", e => {
 });
 
 
-// Contador de visitas usando localStorage
-/*document.addEventListener("DOMContentLoaded", () => {
-    let visitas = localStorage.getItem("visitas");
-    if (visitas === null) {
-        visitas = 1;
-    } else {
-        visitas = parseInt(visitas) + 1;
-    }
-    localStorage.setItem("visitas", visitas);
+// Script para mostrar info al pasar sobre los cuadros de Git
+const boxes = document.querySelectorAll('.git-box');
+const infoBox = document.getElementById('gitInfo');
 
-    document.getElementById("contador-visitas").textContent = 
-        `👀 Has visitado esta página ${visitas} veces desde este navegador.`;
-});*/
-
-
-  const boxes = document.querySelectorAll('.git-box');
-  const infoBox = document.getElementById('gitInfo');
-
-  boxes.forEach(box => {
-    box.addEventListener('mouseenter', () => {
-      infoBox.textContent = box.getAttribute('data-info');
-      infoBox.classList.add('show');
-    });
-    box.addEventListener('mouseleave', () => {
-      infoBox.classList.remove('show');
-      infoBox.textContent = ""; // opcional: limpiar texto
-    });
+boxes.forEach(box => {
+  box.addEventListener('mouseenter', () => {
+    infoBox.textContent = box.getAttribute('data-info');
+    infoBox.classList.add('show');
   });
+  box.addEventListener('mouseleave', () => {
+    infoBox.classList.remove('show');
+    infoBox.textContent = ""; // opcional: limpiar texto
+  });
+});
