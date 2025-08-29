@@ -1,4 +1,135 @@
-<div class="text-center p-5">
-<h2>🎶 Afinando el código...</h2>
-  <p class="fs-5 text-muted">Muy pronto encontrarás aquí el tutorial de <code>git clone</code>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: git clone</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+  <!-- ======= Encabezado principal ======= -->
+  <div class="header mb-4 text-center">
+    <h1 class="fw-bold">📥 git clone</h1>
+    <p class="text-muted">Clona un repositorio existente en una nueva carpeta local.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ¿Qué hace? -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📌 ¿Qué hace?</h2>
+      <p>
+        El comando <code>git clone</code> crea una copia completa de un repositorio remoto (o local) en tu máquina.
+        Descarga todos los commits, ramas y archivos, configurando automáticamente la conexión con el remoto.
+      </p>
+    </div>
+
+    <!-- Sintaxis básica -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚡ Sintaxis básica</h2>
+      <pre
+        class="bg-dark text-light p-3 rounded"><code>git clone [opciones] &lt;url-repositorio&gt; [nombre-directorio]</code></pre>
+      <p class="mt-2 text-muted">👉 Si no especificas <code>[nombre-directorio]</code>, Git usará el nombre del
+        repositorio.</p>
+    </div>
+
+    <!-- Ejemplo práctico -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📝 Ejemplo práctico</h2>
+      <p>Clonar un repositorio desde GitHub:</p>
+      <pre class="bg-dark text-light p-3 rounded"><code>git clone https://github.com/usuario/proyecto.git</code></pre>
+
+      <div class="mt-4">
+        <h3 class="fw-bold">🔎 Desglose del comando</h3>
+        <p>📌 <code>https://github.com/usuario/proyecto.git</code> → URL del repositorio remoto.</p>
+        <p>📌 <code>proyecto</code> → Carpeta que se creará en tu máquina con todos los archivos y commits.</p>
+      </div>
+    </div>
+
+    <!-- Opciones comunes y avanzadas -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚙️ Opciones comunes y avanzadas</h2>
+      <p class="tip">⚡ <code>git clone &lt;url&gt; nuevo-nombre</code> → clona el repo en una carpeta con nombre
+        personalizado.</p>
+      <p class="tip">⚡ <code>git clone --branch develop &lt;url&gt;</code> → clona directamente la rama
+        <code>develop</code>.</p>
+      <p class="tip">⚡ <code>git clone --depth 1 &lt;url&gt;</code> → clona solo el último commit (shallow clone).</p>
+      <p class="tip">⚡ <code>git clone --recurse-submodules &lt;url&gt;</code> → clona también los submódulos.</p>
+    </div>
+
+    <!-- Buenas prácticas -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">✔️ Buenas prácticas</h2>
+      <p>✔️ Usa <code>--depth 1</code> si solo necesitas la última versión y no todo el historial.</p>
+      <p>✔️ Verifica la URL (HTTPS o SSH) antes de clonar para evitar problemas de permisos.</p>
+      <p>✔️ Cambia el nombre de la carpeta al clonar si trabajas con múltiples copias del mismo repositorio.</p>
+    </div>
+
+    <!-- Errores comunes -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚠️ Errores comunes</h2>
+      <p>⚠️ Usar una URL incorrecta → error de acceso al repositorio.</p>
+      <p>⚠️ No tener permisos (SSH o credenciales) → fallo en la autenticación.</p>
+      <p>⚠️ Confundir <code>git clone</code> con <code>git pull</code> → el primero crea una copia nueva, el segundo
+        actualiza una existente.</p>
+    </div>
+
+    <!-- Mini Quiz -->
+    <section class="my-5">
+      <h2 class="fw-bold">🎮 Mini Quiz</h2>
+
+      <!-- Pregunta 1 -->
+      <p><strong>1.</strong> ¿Qué hace el comando <code>git clone https://github.com/ejemplo/repo.git</code>?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ ¡Correcto! Descarga todo el repositorio en tu máquina." data-target="quiz-feedback-1">
+        Descarga el repositorio completo en tu máquina
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No crea repositorios nuevos en remoto." data-target="quiz-feedback-1">
+        Crea un repositorio vacío en GitHub
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No actualiza repositorios locales existentes." data-target="quiz-feedback-1">
+        Actualiza un repositorio local
+      </button>
+      <p id="quiz-feedback-1" class="mt-3 fw-bold"></p>
+
+      <!-- Pregunta 2 -->
+      <p class="mt-4"><strong>2.</strong> ¿Qué opción clona solo el último commit?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ Correcto: --depth 1 realiza un 'shallow clone'." data-target="quiz-feedback-2">
+        git clone --depth 1 &lt;url&gt;
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. --branch solo selecciona una rama." data-target="quiz-feedback-2">
+        git clone --branch &lt;url&gt;
+      </button>
+      <p id="quiz-feedback-2" class="mt-3 fw-bold"></p>
+    </section>
+
+    <!-- Recursos -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📚 Recursos</h2>
+      <p>🔗 Documentación oficial: <a href="https://git-scm.com/docs/git-clone" target="_blank">git-clone</a></p>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/tEbAKQx_G-s" title="Video recomendado Git Commit" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script del Quiz -->
+  <script src="assets/js/git-clone.js"></script>
+</body>
+
+</html>

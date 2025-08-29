@@ -1,4 +1,143 @@
-<div class="text-center p-5">
-<h2>💡 Iluminando nuevas ideas...</h2>
-  <p class="fs-5 text-muted">Muy pronto encontrarás aquí el tutorial de <code>git diff</code>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: git diff</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+  <!-- ======= Encabezado principal ======= -->
+  <div class="header mb-4 text-center">
+    <h1 class="fw-bold">🔍 git diff</h1>
+    <p class="text-muted">Compara los cambios en los archivos de tu repositorio.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ¿Qué hace? -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📌 ¿Qué hace?</h2>
+      <p>
+        El comando <code>git diff</code> muestra las diferencias entre distintas versiones de los archivos:
+        los cambios pendientes respecto al área de staging, los commits, ramas o incluso respecto al repositorio remoto.
+      </p>
+    </div>
+
+    <!-- Sintaxis básica -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚡ Sintaxis básica</h2>
+      <pre class="bg-dark text-light p-3 rounded"><code>git diff [opciones] [rango]</code></pre>
+      <p class="mt-2 text-muted">👉 Sin parámetros, compara archivos modificados con el último commit.</p>
+    </div>
+
+    <!-- Ejemplo práctico -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📝 Ejemplo práctico</h2>
+      <p>Si modificamos <code>index.html</code> pero no lo agregamos aún al staging:</p>
+      <pre class="bg-dark text-light p-3 rounded"><code>git diff</code></pre>
+      <p>Salida típica:</p>
+      <pre class="bg-dark text-light p-3 rounded"><code>diff --git a/index.html b/index.html
+--- a/index.html
++++ b/index.html
+@@ -1,5 +1,6 @@
+ &lt;html&gt;
+   &lt;head&gt;
+-    &lt;title&gt;Mi página&lt;/title&gt;
++    &lt;title&gt;Mi página actualizada&lt;/title&gt;
+   &lt;/head&gt;
+   &lt;body&gt;
++    &lt;p&gt;Nuevo párrafo&lt;/p&gt;
+   &lt;/body&gt;
+ &lt;/html&gt;</code></pre>
+
+      <div class="mt-4">
+        <h3 class="fw-bold">🔎 Desglose del comando</h3>
+        <p>📌 Líneas con <code>-</code> → fueron eliminadas.</p>
+        <p>📌 Líneas con <code>+</code> → fueron agregadas.</p>
+        <p>📌 Los bloques <code>@@</code> indican la ubicación de los cambios en el archivo.</p>
+      </div>
+    </div>
+
+    <!-- Opciones comunes -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚙️ Opciones comunes</h2>
+      <p class="tip">⚡ <code>git diff</code> → muestra cambios en el directorio de trabajo (no staged).</p>
+      <p class="tip">⚡ <code>git diff --staged</code> → muestra cambios entre staging y el último commit.</p>
+      <p class="tip">⚡ <code>git diff HEAD</code> → compara todo (staging + no staged) con el último commit.</p>
+      <p class="tip">⚡ <code>git diff main..feature</code> → compara dos ramas.</p>
+      <p class="tip">⚡ <code>git diff commit1 commit2</code> → compara dos commits específicos.</p>
+    </div>
+
+    <!-- Buenas prácticas -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">✔️ Buenas prácticas</h2>
+      <p>✔️ Revisa siempre <code>git diff</code> antes de hacer commit.</p>
+      <p>✔️ Usa <code>--staged</code> para confirmar que lo que vas a commitear es correcto.</p>
+      <p>✔️ Para revisiones más visuales, combina con GUIs como <code>gitk</code> o extensiones de VS Code.</p>
+    </div>
+
+    <!-- Errores comunes -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚠️ Errores comunes</h2>
+      <p>⚠️ Creer que <code>git diff</code> modifica archivos → solo muestra diferencias.</p>
+      <p>⚠️ Olvidar usar <code>--staged</code> y pensar que se están viendo los cambios listos para commit.</p>
+    </div>
+
+    <!-- Mini Quiz -->
+    <section class="my-5">
+      <h2 class="fw-bold">🎮 Mini Quiz</h2>
+
+      <!-- Pregunta 1 -->
+      <p><strong>1.</strong> ¿Qué muestra <code>git diff</code> sin opciones?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ ¡Correcto! Muestra los cambios en el directorio de trabajo que aún no están en staging."
+        data-target="quiz-feedback-1">
+        Cambios en el directorio de trabajo (no staged)
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No muestra commits directamente." data-target="quiz-feedback-1">
+        El historial de commits
+      </button>
+      <p id="quiz-feedback-1" class="mt-3 fw-bold"></p>
+
+      <!-- Pregunta 2 -->
+      <p class="mt-4"><strong>2.</strong> ¿Qué opción se usa para ver cambios entre staging y el último commit?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ Correcto: --staged muestra los cambios preparados para commit." data-target="quiz-feedback-2">
+        git diff --staged
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. HEAD compara con el último commit, incluyendo no staged."
+        data-target="quiz-feedback-2">
+        git diff HEAD
+      </button>
+      <p id="quiz-feedback-2" class="mt-3 fw-bold"></p>
+    </section>
+
+    <!-- Recursos -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📚 Recursos</h2>
+      <p>🔗 Documentación oficial: <a href="https://git-scm.com/docs/git-diff" target="_blank">git-diff</a></p>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/tEbAKQx_G-s" title="Video recomendado Git Commit" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script del Quiz -->
+  <script src="assets/js/git-diff.js"></script>
+</body>
+
+</html>

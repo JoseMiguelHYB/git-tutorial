@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial: git help</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-light">
+
+    <!-- ======= Encabezado ======= -->
+    <div class="header mb-4 text-center">
+        <h1 class="fw-bold">❓ git help</h1>
+        <p class="text-muted">Consulta la ayuda integrada de Git: comandos, guías y documentación.</p>
+    </div>
+
+    <div class="container">
+
+        <!-- ¿Qué hace? -->
+        <div class="card shadow-sm mb-4 p-4">
+            <h2 class="fw-bold mb-3">📌 ¿Qué hace?</h2>
+            <p>
+                El comando <code>git help</code> muestra información sobre Git y sus comandos disponibles,
+                o abre páginas del manual en distintos formatos según las opciones usadas.
+            </p>
+        </div>
+
+        <!-- Sintaxis básica -->
+        <div class="card shadow-sm mb-4 p-4">
+            <h2 class="fw-bold mb-3">⚡ Sintaxis básica</h2>
+            <pre class="bg-dark text-light p-3 rounded"><code>git help [opciones] [comando/guía]</code></pre>
+        </div>
+
+        <!-- Opciones comunes -->
+        <div class="card shadow-sm mb-4 p-4">
+            <h2 class="fw-bold mb-3">⚙️ Opciones comunes</h2>
+            <p class="tip"><code>-a</code> / <code>--all</code> → Muestra todos los comandos disponibles.</p>
+            <p class="tip"><code>-g</code> / <code>--guides</code> → Muestra las guías conceptuales de Git.</p>
+            <p class="tip"><code>-c</code> / <code>--config</code> → Lista todas las variables de configuración
+                disponibles.</p>
+            <p class="tip"><code>-i</code> / <code>--info</code> → Abre la ayuda en formato info.</p>
+            <p class="tip"><code>-m</code> / <code>--man</code> → Abre la página de manual.</p>
+            <p class="tip"><code>-w</code> / <code>--web</code> → Abre la ayuda en formato HTML en tu navegador.</p>
+        </div>
+
+        <!-- Ejemplo práctico -->
+        <div class="card shadow-sm mb-4 p-4">
+            <h2 class="fw-bold mb-3">📝 Ejemplo práctico</h2>
+            <pre class="bg-dark text-light p-3 rounded"><code># Muestra comandos comunes
+git help
+
+# Muestra todos los comandos disponibles
+git help -a
+
+# Listar guías conceptuales
+git help --guides
+
+# Ver configuración disponible
+git help --config
+
+# Abrir manual en formato man
+git help -m git
+
+# Abrir ayuda en HTML en navegador
+git help -w commit</code></pre>
+        </div>
+
+        <!-- Buenas prácticas -->
+        <div class="card shadow-sm mb-4 p-4">
+            <h2 class="fw-bold mb-3">✔️ Buenas prácticas</h2>
+            <p>✔️ Usa <code>git help -a</code> para explorar comandos desconocidos.</p>
+            <p>✔️ Recurre a <code>git help &lt;comando&gt;</code> antes de intentar un comando potente.</p>
+            <p>✔️ Prefiere el formato <code>--web</code> si quieres una experiencia visual navegable.</p>
+        </div>
+
+        <!-- Errores comunes -->
+        <div class="card shadow-sm mb-4 p-4">
+            <h2 class="fw-bold mb-3">⚠️ Errores comunes</h2>
+            <p>⚠️ Usar <code>--all</code> sin saber que incluye comandos externos y alias puede abrumar.</p>
+            <p>⚠️ Algunos nombres como <code>user-manual</code> pueden fallar al abrir, según cómo se interprete el
+                prefijo <code>git-</code>.</p>
+        </div>
+
+        <!-- Mini Quiz -->
+        <section class="my-5">
+            <h2 class="fw-bold">🎮 Mini Quiz</h2>
+
+            <!-- Pregunta 1 -->
+            <p><strong>1.</strong> ¿Qué hace <code>git help -a</code>?</p>
+            <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+                data-feedback="✅ Correcto. Muestra todos los comandos disponibles." data-target="quiz-feedback-1">
+                Muestra todos los comandos disponibles
+            </button>
+            <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+                data-feedback="❌ Incorrecto. No muestra documentación detallada, solo lista."
+                data-target="quiz-feedback-1">
+                Abre el manual del comando actual
+            </button>
+            <p id="quiz-feedback-1" class="mt-3 fw-bold"></p>
+
+            <!-- Pregunta 2 -->
+            <p class="mt-4"><strong>2.</strong> ¿Cuál opción abre la ayuda en HTML en un navegador?</p>
+            <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+                data-feedback="✅ Exacto: usa <code>--web</code> o <code>-w</code>." data-target="quiz-feedback-2">
+                --web (-w)
+            </button>
+            <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+                data-feedback="❌ No es correcto. --man abriría la ayuda en formato man." data-target="quiz-feedback-2">
+                --man (-m)
+            </button>
+            <p id="quiz-feedback-2" class="mt-3 fw-bold"></p>
+        </section>
+
+        <!-- Recursos -->
+        <div class="card shadow-sm mb-4 p-4">
+            <h2 class="fw-bold mb-3">📚 Recursos</h2>
+            <p>🔗 Documentación oficial: <a href="https://git-scm.com/docs/git-help" target="_blank">git-help</a></p>
+            <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/tEbAKQx_G-s" title="Video recomendado Git Commit"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script del Quiz -->
+    <script src="assets/js/git-help.js"></script>
+</body>
+
+</html>

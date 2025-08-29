@@ -1,4 +1,132 @@
-<div class="text-center p-5">
-<h2>🌱 Sembrando contenido...</h2>
-  <p class="fs-5 text-muted">Muy pronto encontrarás aquí el tutorial de <code>git remote</code>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: git remote</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+  <!-- ======= Encabezado ======= -->
+  <div class="header mb-4 text-center">
+    <h1 class="fw-bold">🌍 git remote</h1>
+    <p class="text-muted">Gestiona repositorios remotos en tu proyecto Git.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ¿Qué hace? -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📌 ¿Qué hace?</h2>
+      <p>
+        El comando <code>git remote</code> permite administrar las conexiones con repositorios remotos.
+        Con él puedes listar, agregar, renombrar o eliminar remotos asociados a tu repositorio local.
+      </p>
+    </div>
+
+    <!-- Sintaxis básica -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚡ Sintaxis básica</h2>
+      <pre class="bg-dark text-light p-3 rounded"><code>git remote [opciones]</code></pre>
+    </div>
+
+    <!-- Ejemplo práctico -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📝 Ejemplo práctico</h2>
+      <pre class="bg-dark text-light p-3 rounded"><code># Listar remotos
+git remote -v
+
+# Agregar un remoto
+git remote add origin https://github.com/usuario/proyecto.git
+
+# Renombrar un remoto
+git remote rename origin upstream
+
+# Eliminar un remoto
+git remote remove origin
+</code></pre>
+      <p class="mt-2 text-muted">👉 Normalmente se usa <code>origin</code> como nombre del remoto principal.</p>
+    </div>
+
+    <!-- Opciones comunes -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚙️ Opciones comunes</h2>
+      <p class="tip">⚡ <code>git remote</code> → lista los remotos configurados.</p>
+      <p class="tip">⚡ <code>git remote -v</code> → lista remotos con sus URLs.</p>
+      <p class="tip">⚡ <code>git remote add &lt;nombre&gt; &lt;url&gt;</code> → agrega un nuevo remoto.</p>
+      <p class="tip">⚡ <code>git remote rename &lt;viejo&gt; &lt;nuevo&gt;</code> → renombra un remoto.</p>
+      <p class="tip">⚡ <code>git remote remove &lt;nombre&gt;</code> → elimina un remoto.</p>
+    </div>
+
+    <!-- Buenas prácticas -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">✔️ Buenas prácticas</h2>
+      <p>✔️ Usa <code>origin</code> como nombre del remoto principal.</p>
+      <p>✔️ Si trabajas con forks, usa nombres claros como <code>upstream</code> para el remoto original.</p>
+      <p>✔️ Revisa con <code>git remote -v</code> antes de hacer push/pull para evitar errores.</p>
+    </div>
+
+    <!-- Errores comunes -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚠️ Errores comunes</h2>
+      <p>⚠️ Usar una URL incorrecta al agregar el remoto → causará fallos en <code>git push</code> y
+        <code>git pull</code>.</p>
+      <p>⚠️ Confundir <code>origin</code> con <code>upstream</code> en proyectos colaborativos.</p>
+      <p>⚠️ Olvidar eliminar remotos que ya no se usan, lo que puede causar confusión.</p>
+    </div>
+
+    <!-- Mini Quiz -->
+    <section class="my-5">
+      <h2 class="fw-bold">🎮 Mini Quiz</h2>
+
+      <!-- Pregunta 1 -->
+      <p><strong>1.</strong> ¿Qué hace <code>git remote -v</code>?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ ¡Correcto! Muestra la lista de remotos con sus URLs." data-target="quiz-feedback-1">
+        Lista los remotos con sus URLs
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No agrega un remoto." data-target="quiz-feedback-1">
+        Agrega un nuevo remoto
+      </button>
+      <p id="quiz-feedback-1" class="mt-3 fw-bold"></p>
+
+      <!-- Pregunta 2 -->
+      <p class="mt-4"><strong>2.</strong> ¿Qué comando se usa para eliminar un remoto llamado <code>origin</code>?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. Este comando renombra remotos, no elimina." data-target="quiz-feedback-2">
+        git remote rename origin delete
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ Correcto: git remote remove origin elimina el remoto." data-target="quiz-feedback-2">
+        git remote remove origin
+      </button>
+      <p id="quiz-feedback-2" class="mt-3 fw-bold"></p>
+    </section>
+
+    <!-- Recursos -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📚 Recursos</h2>
+      <p>🔗 Documentación oficial: <a href="https://git-scm.com/docs/git-remote" target="_blank">git-remote</a></p>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/tEbAKQx_G-s" title="Video recomendado Git Commit" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script del Quiz -->
+  <script src="assets/js/git-remote.js"></script>
+</body>
+
+</html>

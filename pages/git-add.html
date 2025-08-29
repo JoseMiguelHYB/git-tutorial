@@ -1,4 +1,134 @@
-<div class="text-center p-5">
-  <h2>🚧 Página en obras...</h2>
-  <p class="fs-5 text-muted">Muy pronto encontrarás aquí el tutorial de <code>git add</code>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: git add</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+  <!-- ======= Encabezado principal ======= -->
+  <div class="header mb-4 text-center">
+    <h1 class="fw-bold">➕ git add</h1>
+    <p class="text-muted">Agrega cambios al área de preparación (staging area).</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ¿Qué hace? -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📌 ¿Qué hace?</h2>
+      <p>
+        El comando <code>git add</code> toma los cambios de tus archivos (nuevos o modificados) y los coloca en el
+        <strong>staging area</strong>, preparando esos cambios para ser confirmados en el próximo
+        <code>git commit</code>.
+      </p>
+    </div>
+
+    <!-- Sintaxis básica -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚡ Sintaxis básica</h2>
+      <pre class="bg-dark text-light p-3 rounded"><code>git add [opciones] &lt;ruta-de-archivo&gt;</code></pre>
+      <p class="mt-2 text-muted">👉 Puedes agregar un archivo específico, varios archivos o todos los cambios del
+        directorio.</p>
+    </div>
+
+    <!-- Ejemplo práctico -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📝 Ejemplo práctico</h2>
+      <p>Agregar un archivo específico:</p>
+      <pre class="bg-dark text-light p-3 rounded"><code>git add index.html</code></pre>
+      <p>Agregar todos los cambios en el proyecto:</p>
+      <pre class="bg-dark text-light p-3 rounded"><code>git add .</code></pre>
+
+      <div class="mt-4">
+        <h3 class="fw-bold">🔎 Desglose del comando</h3>
+        <p>📌 <code>index.html</code> → Solo agrega ese archivo al staging area.</p>
+        <p>📌 <code>.</code> → Agrega todos los archivos modificados en el directorio actual.</p>
+      </div>
+    </div>
+
+    <!-- Opciones comunes y avanzadas -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚙️ Opciones comunes y avanzadas</h2>
+      <p class="tip">⚡ <code>git add archivo1 archivo2</code> → agrega varios archivos a la vez.</p>
+      <p class="tip">⚡ <code>git add *.html</code> → agrega todos los archivos que cumplan con el patrón.</p>
+      <p class="tip">⚡ <code>git add -p</code> → permite añadir cambios de forma interactiva (por fragmentos).</p>
+      <p class="tip">⚡ <code>git add -A</code> → agrega todos los cambios, incluyendo eliminaciones.</p>
+    </div>
+
+    <!-- Buenas prácticas -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">✔️ Buenas prácticas</h2>
+      <p>✔️ Usa <code>git status</code> para revisar qué archivos están en staging antes de hacer commit.</p>
+      <p>✔️ Agrega solo los archivos necesarios, evita usar <code>git add .</code> sin revisar.</p>
+      <p>✔️ Utiliza <code>git add -p</code> para confirmar solo los cambios que quieres.</p>
+    </div>
+
+    <!-- Errores comunes -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚠️ Errores comunes</h2>
+      <p>⚠️ Creer que <code>git add</code> hace un commit → solo prepara los cambios, no los confirma.</p>
+      <p>⚠️ Usar <code>git add .</code> sin revisar → puede añadir archivos no deseados.</p>
+      <p>⚠️ Olvidar añadir cambios → el commit saldrá vacío o incompleto.</p>
+    </div>
+
+    <!-- Mini Quiz -->
+    <section class="my-5">
+      <h2 class="fw-bold">🎮 Mini Quiz</h2>
+
+      <!-- Pregunta 1 -->
+      <p><strong>1.</strong> ¿Qué hace el comando <code>git add archivo.txt</code>?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ ¡Correcto! Agrega ese archivo al staging area." data-target="quiz-feedback-1">
+        Agrega el archivo al staging area
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No hace commit todavía." data-target="quiz-feedback-1">
+        Hace commit del archivo
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No elimina archivos." data-target="quiz-feedback-1">
+        Elimina el archivo
+      </button>
+      <p id="quiz-feedback-1" class="mt-3 fw-bold"></p>
+
+      <!-- Pregunta 2 -->
+      <p class="mt-4"><strong>2.</strong> ¿Qué opción te permite seleccionar fragmentos de cambios para añadir?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ Correcto: -p permite añadir cambios de forma interactiva." data-target="quiz-feedback-2">
+        git add -p
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. -A agrega todo sin preguntar." data-target="quiz-feedback-2">
+        git add -A
+      </button>
+      <p id="quiz-feedback-2" class="mt-3 fw-bold"></p>
+    </section>
+
+    <!-- Recursos -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📚 Recursos</h2>
+      <p>🔗 Documentación oficial: <a href="https://git-scm.com/docs/git-add" target="_blank">git-add</a></p>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/tEbAKQx_G-s" title="Video recomendado Git Commit" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script del Quiz -->
+  <script src="assets/js/git-add.js"></script>
+</body>
+
+</html>

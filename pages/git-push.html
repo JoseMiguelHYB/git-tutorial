@@ -1,4 +1,131 @@
-<div class="text-center p-5">
-<h2>🛠️ Montando la estructura...</h2>
-  <p class="fs-5 text-muted">Muy pronto encontrarás aquí el tutorial de <code>git push</code>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial: git push</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-light">
+
+  <!-- ======= Encabezado ======= -->
+  <div class="header mb-4 text-center">
+    <h1 class="fw-bold">🚀 git push</h1>
+    <p class="text-muted">Sube tus cambios confirmados al repositorio remoto.</p>
+  </div>
+
+  <div class="container">
+
+    <!-- ¿Qué hace? -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📌 ¿Qué hace?</h2>
+      <p>
+        El comando <code>git push</code> envía tus commits locales a un repositorio remoto.
+        Se utiliza después de hacer <code>git add</code> y <code>git commit</code> para compartir tu trabajo con otros.
+      </p>
+    </div>
+
+    <!-- Sintaxis básica -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚡ Sintaxis básica</h2>
+      <pre class="bg-dark text-light p-3 rounded"><code>git push &lt;remoto&gt; &lt;rama&gt;</code></pre>
+    </div>
+
+    <!-- Ejemplo práctico -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📝 Ejemplo práctico</h2>
+      <pre class="bg-dark text-light p-3 rounded"><code># Subir cambios de la rama actual al remoto "origin"
+git push origin main
+
+# Subir todas las ramas
+git push --all origin
+
+# Subir etiquetas (tags)
+git push --tags
+</code></pre>
+      <p class="mt-2 text-muted">👉 Normalmente se usa <code>origin</code> como remoto y <code>main</code> o
+        <code>master</code> como rama principal.</p>
+    </div>
+
+    <!-- Opciones comunes -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚙️ Opciones comunes</h2>
+      <p class="tip">⚡ <code>git push</code> → sube la rama actual al remoto predeterminado.</p>
+      <p class="tip">⚡ <code>git push origin main</code> → sube la rama <code>main</code> al remoto <code>origin</code>.
+      </p>
+      <p class="tip">⚡ <code>git push --all</code> → sube todas las ramas.</p>
+      <p class="tip">⚡ <code>git push --tags</code> → sube todas las etiquetas.</p>
+      <p class="tip">⚡ <code>git push -u origin main</code> → establece <code>main</code> como rama de seguimiento.</p>
+    </div>
+
+    <!-- Buenas prácticas -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">✔️ Buenas prácticas</h2>
+      <p>✔️ Siempre haz <code>git pull</code> antes de un <code>git push</code> para evitar conflictos.</p>
+      <p>✔️ Usa <code>-u</code> la primera vez para vincular tu rama local con el remoto.</p>
+      <p>✔️ Sube ramas con nombres claros (ej: <code>feature/login</code>, <code>bugfix/navbar</code>).</p>
+    </div>
+
+    <!-- Errores comunes -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">⚠️ Errores comunes</h2>
+      <p>⚠️ "rejected non-fast-forward" → ocurre cuando el remoto tiene cambios que no tienes localmente.</p>
+      <p>⚠️ Olvidar usar <code>-u</code> y tener que escribir siempre <code>git push origin main</code>.</p>
+      <p>⚠️ Subir directamente a <code>main</code> sin pasar por ramas de desarrollo en proyectos colaborativos.</p>
+    </div>
+
+    <!-- Mini Quiz -->
+    <section class="my-5">
+      <h2 class="fw-bold">🎮 Mini Quiz</h2>
+
+      <!-- Pregunta 1 -->
+      <p><strong>1.</strong> ¿Qué hace <code>git push origin main</code>?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ ¡Correcto! Envía los commits locales de la rama main al remoto origin."
+        data-target="quiz-feedback-1">
+        Sube commits de la rama main al remoto origin
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. No crea commits, solo los envía." data-target="quiz-feedback-1">
+        Crea un commit en la rama main
+      </button>
+      <p id="quiz-feedback-1" class="mt-3 fw-bold"></p>
+
+      <!-- Pregunta 2 -->
+      <p class="mt-4"><strong>2.</strong> ¿Qué comando usarías para subir todas las ramas al remoto?</p>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="false"
+        data-feedback="❌ Incorrecto. Esto solo sube una rama." data-target="quiz-feedback-2">
+        git push origin main
+      </button>
+      <button class="btn btn-outline-primary quiz-btn" data-correct="true"
+        data-feedback="✅ Correcto: git push --all origin sube todas las ramas." data-target="quiz-feedback-2">
+        git push --all origin
+      </button>
+      <p id="quiz-feedback-2" class="mt-3 fw-bold"></p>
+    </section>
+
+    <!-- Recursos -->
+    <div class="card shadow-sm mb-4 p-4">
+      <h2 class="fw-bold mb-3">📚 Recursos</h2>
+      <p>🔗 Documentación oficial: <a href="https://git-scm.com/docs/git-push" target="_blank">git-push</a></p>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/tEbAKQx_G-s" title="Video recomendado Git Commit" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script del Quiz -->
+  <script src="assets/js/git-push.js"></script>
+</body>
+
+</html>
