@@ -48,11 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Script para quizzes
+// Script para quizzes ------------------------------------------------------
 document.addEventListener("click", e => {
   if (e.target.classList.contains("quiz-btn")) {
     const btn = e.target;
-    const feedback = document.getElementById("quiz-feedback");
+    const targetId = btn.dataset.target;  // ej: quiz-feedback-1 o quiz-feedback-2
+    const feedback = document.getElementById(targetId);
+
+    if (!feedback) return;
 
     feedback.textContent = btn.dataset.feedback || "❌ Incorrecto, prueba de nuevo.";
 
@@ -65,6 +68,7 @@ document.addEventListener("click", e => {
     }
   }
 });
+
 
 
 // Script para mostrar info al pasar sobre los cuadros de Git
