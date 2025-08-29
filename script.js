@@ -81,3 +81,68 @@ boxes.forEach(box => {
     infoBox.textContent = ""; // opcional: limpiar texto
   });
 });
+
+
+
+
+
+/* -------------------
+   Frases aleatorias en topbar
+------------------- */
+const frases = [
+  "Controla tus versiones, controla tu proyecto 🚀",
+  "Un commit al día mantiene los bugs a raya 🐛",
+  "Git es tu máquina del tiempo ⏳",
+  "Colaborar en GitHub es construir en equipo 🤝",
+  "Los repositorios cuentan tu historia 📖",
+  "Un buen commit explica más que mil líneas de código ✍️",
+  "Con Git, cada error es reversible 🔄",
+  "El branching es tu mejor amigo en el caos 🌱",
+  "Sincroniza, colabora y evoluciona en GitHub 🌍",
+  "Cada push es un paso hacia adelante 📤"
+];
+
+function cambiarFrase() {
+  const quote = document.getElementById("gitQuote");
+  const random = Math.floor(Math.random() * frases.length);
+  quote.textContent = frases[random];
+}
+cambiarFrase();
+setInterval(cambiarFrase, 5000);
+
+/* -------------------
+   Buscador de comandos
+------------------- */
+const form = document.getElementById("topSearch");
+const input = document.getElementById("topSearchInput");
+const sidebarLinks = document.querySelectorAll(".sidebar a[data-page]");
+const inicioLink = document.querySelector('nav a[href="index.html"]'); // 👈 ya lo tienes arriba, lo reutilizamos
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const query = input.value.trim().toLowerCase();
+
+  // Limpiar estados previos
+  sidebarLinks.forEach(link => link.classList.remove("active"));
+  if (inicioLink) inicioLink.classList.remove("active"); // 👈 desactivar Inicio
+
+  if (query === "") return;
+
+  let resultados = [];
+
+  // Buscar coincidencias
+  sidebarLinks.forEach(link => {
+    if (link.textContent.toLowerCase().includes(query)) {
+      resultados.push(link);
+      link.classList.add("active"); // resaltar
+    }
+  });
+
+  if (resultados.length > 0) {
+    // Scroll hacia el primer resultado
+    resultados[0].scrollIntoView({ behavior: "smooth", block: "center" });
+  } else {
+    alert("❌ No se encontraron comandos con: " + query);
+  }
+});
+
