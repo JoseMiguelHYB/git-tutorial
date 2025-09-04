@@ -5,12 +5,38 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 main {
   flex: 1;
 }
 
+h1 {
+  font-size: 2.3rem;
+}
+
+h2,
+h3 {
+  font-size: 1.5rem;
+}
+
+code {
+  font-family: "Fira Code", monospace;
+  font-size: 1rem;
+  color: #d6336c;
+}
+
+pre {
+  font-size: 1rem;
+}
+
+.tip,
+.error,
+.practice {
+  margin-bottom: .6rem;
+}
 
 /* -------------------
    Sidebar
@@ -21,7 +47,6 @@ main {
   left: 0;
   height: 100%;
   width: 300px;
-  /* ancho fijo aqui puedo jugar con él */
   background-color: #0d1117;
   padding-top: 15px;
   border-right: 1px solid #21262d;
@@ -59,7 +84,6 @@ main {
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
-
 /* Títulos dentro del menú */
 .sidebar h6 {
   margin-left: 15px;
@@ -70,7 +94,6 @@ main {
 
 .sidebar a[data-page] {
   margin-left: 45px;
-  /* Aqui cambiamos para mover los comandos a la derecha un poco */
   font-size: 0.95rem;
 }
 
@@ -91,14 +114,12 @@ main {
    Contenido
 ------------------- */
 .content {
-    margin-left: 320px;  /* espacio de la sidebar */
-    margin-top: 70px;    /* espacio para la topbar */
-    padding: 30px;
-    min-height: 100vh;
-    line-height: 1.6;
+  margin-left: 320px;
+  margin-top: 70px;
+  padding: 30px;
+  min-height: 100vh;
+  line-height: 1.6;
 }
-
-
 
 .logo {
   width: 280px;
@@ -175,35 +196,64 @@ main {
   cursor: pointer;
   z-index: 1100;
   display: none;
-  /* solo en móvil */
 }
 
 /* -------------------
-   Responsive
+   Responsive (móvil)
 ------------------- */
 @media (max-width: 992px) {
+  /* Sidebar oculta por defecto */
   .sidebar {
     transform: translateX(-100%);
-    /* oculta por defecto */
+    width: 250px;
   }
 
   .sidebar.active {
     transform: translateX(0);
-    /* se muestra con toggle */
   }
 
+  /* Contenido ocupa toda la pantalla */
   .content {
     margin-left: 0;
-    /* ocupa toda la pantalla */
+    margin-top: 70px;
+    padding: 15px;
   }
 
+  /* Topbar ocupa todo el ancho */
+  .topbar {
+    left: 0;
+    height: 60px;
+    padding: 0 15px;
+  }
+
+  /* Mostrar botón hamburguesa */
   .menu-toggle {
     display: block;
-    /* mostrar botón hamburguesa */
   }
 
+  /* Ajuste de logo */
   .logo {
     width: 200px;
+  }
+
+  /* Textos más pequeños */
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p.fs-5,
+  p.fs-4 {
+    font-size: 1rem;
+  }
+
+  /* Diagrama en columna */
+  .git-diagram {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .git-diagram .arrow {
+    display: none;
   }
 }
 
@@ -230,26 +280,23 @@ main {
 /* -------------------
    Enlace activo
 ------------------- */
-/* Comando activo */
 .sidebar a.active {
-  font-size: 1.09rem; /* un pelín más grande que el texto normal */
-  background-color: #198754; /* Verde Bootstrap */
+  font-size: 1.09rem;
+  background-color: #198754;
   color: #fff;
   font-weight: bold;
-  border-left: 4px solid #ffc107;/* Flecha amarilla */
+  border-left: 4px solid #ffc107;
   padding-left: 12px;
   position: relative;
 }
 
 .sidebar a.active::after {
   content: "⬅︎";
-  /* La flecha */
   position: absolute;
   right: 10px;
   color: #ffc107;
   font-size: 1rem;
 }
-
 
 /* -------------------
    Caja de info
@@ -276,7 +323,6 @@ code.grande {
   font-weight: bold;
 }
 
-
 main section {
   margin-bottom: 40px;
 }
@@ -287,95 +333,66 @@ main header {
   margin-bottom: 30px;
 }
 
-/* Topbar */
+/* -------------------
+   Topbar
+------------------- */
 .topbar {
-    position: fixed;
-    top: 0;
-    left: 300px; /* 👉 que no tape la sidebar */
-    right: 0;
-    height: 60px;
-    background-color: #24292e; /* estilo GitHub */
-    z-index: 1100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 300px;
+  right: 0;
+  height: 60px;
+  background-color: #24292e;
+  z-index: 1100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-/* Buscador más largo */
+/* Buscador */
 .search-box {
-    flex: 1;
-    max-width: 450px; /* ajusta según tu gusto */
+  flex: 1;
+  max-width: 450px;
 }
 
 .search-box input {
-    width: 100%;
-    border-radius: 6px;
-    padding: 6px 12px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 6px 12px;
 }
-
 
 /* Botón destacado */
 .btn-highlight {
-    background: linear-gradient(45deg, #28a745, #20c997);
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-highlight:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
-
 
 /* Imagen del flujo básico de Git */
 .git-flow-diagram {
-    max-width: 600px;
-    width: 100%;
-    display: block;
-    margin: 0 auto 20px auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    animation: fadeIn 1.5s ease;
+  max-width: 600px;
+  width: 100%;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1.5s ease;
 }
 
-/********************Estilos para cada comando********************************/
-body {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-h1 {
-  font-size: 2.3rem;
-}
-
-h2,
-h3 {
-  font-size: 1.5rem;
-}
-
-code {
-  font-family: "Fira Code", monospace;
-  font-size: 1rem;
-  color: #d6336c;
-}
-
-pre {
-  font-size: 1rem;
-}
-
-.tip,
-.error,
-.practice {
-  margin-bottom: .6rem;
-}
-
-
-/* Estilo especial para la sección EXTRA */
+/* Estilo especial EXTRA */
 .sidebar-content h6#extra {
-    color: #6fbf73; /* amarillo tipo "warning" */
-    font-weight: bold;
+  color: #6fbf73;
+  font-weight: bold;
 }
+
+
+

@@ -148,3 +148,27 @@ form.addEventListener("submit", function (e) {
   }
 });
 
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
+  const links = document.querySelectorAll(".sidebar a");
+
+  if (toggleBtn && sidebar) {
+    // Abrir/cerrar con el botón hamburguesa
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+    });
+  }
+
+  // Cerrar sidebar al hacer click en un enlace (solo en móvil)
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 992) {
+        sidebar.classList.remove("active");
+      }
+    });
+  });
+});
+
+
